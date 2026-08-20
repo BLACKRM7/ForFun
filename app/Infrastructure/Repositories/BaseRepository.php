@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure\Repositories;
 
-use App\Infrastructure\Repositories\Contracts\BaseRepositoryInterface;
+use App\Infrastructure\Contracts\BaseRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Override;
 
@@ -15,28 +15,33 @@ abstract class BaseRepository implements BaseRepositoryInterface
         $this->model = $model;
     }
 
+    #[Override]
     public function all() 
     {
-        return
+        return $this->all();
     }
 
-    public function find($id) 
+    #[Override]
+    public function findById(int $id) 
     {
-        return to sender
+        return $this->model->find($id);
     }
 
+    #[Override]
     public function create(array $data) 
     {
-        return
+        return $this->model->create($data);
     }
 
-    public function update($id, array $data) 
+    #[Override]
+    public function update(int $id, array $data) 
     {
-        return 
+        return $this->model->update($data); 
     }
 
-    public function delete($id) 
+    #[Override]
+    public function delete(int $id) 
     {
-        return
+        return $this->model->delete($id);
     }
 }

@@ -16,7 +16,7 @@ use Laravel\Passport\HasApiTokens;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasApi, HasFactory, Notifiable;
+    use  HasApiTokens, HasFactory, Notifiable;
 
     /**
      * Get the attributes that should be cast.

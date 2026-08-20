@@ -19,10 +19,11 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): voida
+    public function boot(): void
     {
-        Passport::tokenExpireIn(now()->addMinute(1));
-        Passport::freshTokenExpireIN(now()->addDay(1));
+        Passport::enablePasswordGrant();
+        Passport::tokensExpireIn(now()->addMinute());
+        Passport::refreshTokensExpireIn(now()->addDays(1));
 
         Passport::tokensCan([
             'admin' => 'Akses Tingkat administrator',

@@ -1,4 +1,4 @@
 <?php
 
-namespace App\Modules\Auth\Repositories;a
+namespace App\Modules\Auth\Repositories;
 
